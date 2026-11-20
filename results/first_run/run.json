@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-11-22T11:21:08.733965+00:00",
+  "config": {
+    "train": [
+      "MH_01_easy",
+      "MH_02_easy",
+      "MH_03_medium",
+      "V1_02_medium",
+      "V2_01_easy",
+      "V2_02_medium"
+    ],
+    "validation": [
+      "MH_04_difficult",
+      "V1_03_difficult"
+    ],
+    "test": [
+      "MH_05_difficult",
+      "V2_03_difficult"
+    ],
+    "window": 200,
+    "stride": 20,
+    "sample_step": 2,
+    "max_gap_s": 0.025,
+    "epochs": 50,
+    "patience": 8,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "weight_decay": 0.001,
+    "seed": 42,
+    "threads": 4
+  },
+  "best_epoch": 12,
+  "selected_on_validation": "CNN",
+  "validation_macro_rmse": {
+    "Zero": 0.5576839596033096,
+    "Training mean": 0.5547536760568619,
+    "Ridge": 0.4837575852870941,
+    "CNN": 0.4346601217985153
+  },
+  "training_seconds": 42.2432879160624,
+  "dataset": {
+    "url": "https://github.com/Air-IO/Air-IO/releases/download/datasets/EuRoC-Dataset.zip",
+    "sha256": "de09fdd03e9147461fd678aa6763454bdf8d1f07172753a9ec80073e9be38e4a",
+    "original": "https://projects.asl.ethz.ch/datasets/euroc-mav/",
+    "files": 44
+  },
+  "prepared_hashes": {
+    "train.npz": "f00b03305704732f21e746a89bd13486585b0b746e56d4b0aa29166212714cb1",
+    "validation.npz": "5bd45c30da7e9928b97fd2e7d03323a98127ca47084d1200172a43a9fa058255",
+    "config.json": "7168fb7818d47a6522b4472fdc7b1f9830a8d42ffafc59957d944149f70f9924"
+  },
+  "versions": {
+    "torch": "2.15.0",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1"
+  },
+  "task": "body-frame reference velocity from gyro/accel/dt only",
+  "initialization": "trajectory evaluation uses one reference p/v/q per continuous segment; no reference bias or ongoing attitude",
+  "hash_scheme": "SHA256 of ordered array keys/dtypes/shapes/contents; plain config bytes"
+}

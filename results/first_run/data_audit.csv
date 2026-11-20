@@ -1,0 +1,11 @@
+split,sequence,raw_supported_rows,windows,duration_s,gaps
+train,MH_01_easy,36381,1810,181.9,0
+train,MH_02_easy,29992,1490,149.95499980800003,0
+train,MH_03_medium,26302,1306,131.504999936,0
+train,V1_02_medium,16701,826,83.5,0
+train,V2_01_easy,22401,1111,112.0,0
+train,V2_02_medium,23091,1145,115.449999872,0
+validation,MH_04_difficult,19753,978,98.76,0
+validation,V1_03_difficult,20932,1037,104.65500006399999,0
+test,MH_05_difficult,22212,1101,111.055000064,0
+test,V2_03_difficult,22970,1139,114.84499993600001,0
