@@ -9,3 +9,6 @@ checkpoints/
 results/*
 !results/README.md
 !results/first_run/
+
+# Retain the reproducible bounded optimization experiment
+!results/optimized/

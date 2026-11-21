@@ -1,0 +1,22 @@
+{
+  "trial": {
+    "id": "resnet_1s_seed17",
+    "architecture": "resnet",
+    "window": 200,
+    "sample_step": 2,
+    "loss": "mse",
+    "augmentation": "noise",
+    "seed": 17
+  },
+  "best_epoch": 11,
+  "best_weights": "ema",
+  "validation_macro_rmse": 0.3894222378730774,
+  "epochs_run": 23,
+  "seconds": 29.305336208082736,
+  "device": "mps",
+  "parameter_count": 78787,
+  "weight_change_l2": 6.317768096923828,
+  "initial_weight_l2": 20.58431053161621,
+  "relative_weight_change": 0.306921530707581,
+  "all_weights_finite": true
+}

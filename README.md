@@ -1,15 +1,32 @@
 # IMU-only drone odometry: deep velocity learning
 
-A separate research project for **Shreya, Pranjal, Meghna and Ritesh**, built around EuRoC MAV inertial measurements and reference motion. No images or GPS enter the model. The first temporal CNN improves held-out **body-velocity RMSE by 9.2% over Ridge**, but the simple trajectory pipeline still drifts badly and does **not** beat stationary/constant-velocity position baselines. This is a reproducible starting point for IO research, not a production navigation system.
+An IMU-only drone research project for **Shreya, Pranjal, Meghna and Ritesh**, using EuRoC MAV inertial measurements and reference motion. No images, GPS or ongoing reference orientation enter the velocity model.
 
-![Held-out velocity comparison](results/first_run/velocity_comparison.png)
+## Latest: bounded DL optimization
+
+Eight configurations plus two additional seed runs were completed. Validation selected a **three-seed residual-CNN ensemble**. On identical timestamps in the previously inspected evaluation sequences:
+
+| Method | Mean axis body-velocity RMSE (m/s) ↓ |
+|---|---:|
+| Optimized ensemble | **0.3641** |
+| Original CNN | 0.4153 |
+| Ridge | 0.4635 |
+| Zero velocity | 0.5458 |
+
+This is **12.3% lower velocity RMSE than the original CNN**, using matched four-second-supported endpoints. The old 0.4157 result below used different startup samples. Model selection used validation only; these evaluation sequences have already been inspected, so this is a development comparison, not fresh confirmation.
+
+Position tracking also improves over the original CNN, but does not consistently beat stationary position baselines. With fixed training-derived IMU calibration, optimized position RMSE is 7.98 m / 2.38 m versus stationary 8.17 m / 2.18 m. Initialization still uses reference position/orientation once per segment. This is not yet reliable full odometry or unaided startup.
+
+![Optimized velocity comparison](results/optimized/velocity_comparison.png)
+
+See the [complete optimization report](results/optimized/REPORT.md), [all trial scores](results/optimized/leaderboard.csv), and [method/reproduction details](docs/OPTIMIZATION.md). The original baseline experiment is preserved in `results/first_run/`.
 
 ## What is implemented
 
 - Pinned, checksum-verified download of the ~19 MB EuRoC IMU/reference subset packaged by AirIO; no large image download.
 - Integer-safe timestamp alignment, quaternion SLERP, reference coverage checks, and causal one-second windows that reset across gaps.
 - Six raw gyro/accelerometer channels plus elapsed sample time as inputs; reference body-frame velocity as supervision only.
-- A small PyTorch temporal CNN, training-only normalization, validation early stopping, and saved checkpoint.
+- Original and residual CNNs, a dilated temporal network, GRU with attention, balanced flight sampling, augmentation, learning-rate scheduling, EMA weights, validation stopping, and seed ensembles. All tried configurations are retained.
 - Matched-sample zero/mean/Ridge baselines, per-sequence held-out metrics, raw inertial integration and learned-velocity trajectory evaluation.
 - Tests, CI, plots, run metadata, dataset audit and a four-person work plan.
 
@@ -65,6 +82,23 @@ python scripts/predict.py data/euroc/MH_05_difficult/mav0/imu0/data.csv --output
 ```
 
 The CSV uses timestamp in nanoseconds followed by gyro xyz and specific-force xyz. Output is body velocity, not position; full trajectory inference additionally requires an initialization/orientation strategy.
+
+Use the selected optimized checkpoint for IMU-only prediction:
+
+```bash
+python scripts/predict.py data/euroc/MH_05_difficult/mav0/imu0/data.csv \
+  --checkpoint results/optimized/best.pt --output results/optimized_predictions.csv
+```
+
+To reproduce the bounded search, use a new output directory:
+
+```bash
+python scripts/optimize.py --output results/another_search
+python scripts/evaluate_optimized.py --output results/another_search
+python scripts/report_optimized.py --output results/another_search
+```
+
+The search records actual weight changes, gradients and learning curves. All 40,899 parameters in the original CNN changed during its first training run; see `results/optimized/original_weight_audit.json`. No finite search proves that every possible technique has been tried or that a global best has been reached. **14 tests passed** after the expansion.
 
 ## What “IMU-only” means here
 

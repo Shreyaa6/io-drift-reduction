@@ -21,3 +21,7 @@ These are assigned responsibilities, not a claim that each teammate authored the
 Each collaborator clones the repository, creates a feature branch, makes/reviews substantive changes, runs relevant tests, commits using their own configured identity, and opens a pull request. Use co-author trailers only for people who actually contributed and provide their correct GitHub-associated email. Never fabricate past activity or authorship. The initial scaffold's workstream commits are organizational divisions, not evidence of teammate contributions.
 
 No assigned item is automatically complete simply because starter code exists. Full IO validation, generalization, deployment timing, streaming acquisition and improved orientation handling remain research work.
+
+## Optimization implementation update
+
+Codex implemented a bounded eight-configuration DL search plus two seed repetitions and training-derived fixed calibration. This does not change authorship assignments: Shreya should review/reproduce model selection, Pranjal should audit calibration and reference-initialization assumptions, Meghna should organize fresh external flight data, and Ritesh should independently verify matched-endpoint comparisons and position-baseline failures. None of these reviews is claimed complete on their behalf.

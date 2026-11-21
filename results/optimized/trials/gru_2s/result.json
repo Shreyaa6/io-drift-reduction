@@ -1,0 +1,22 @@
+{
+  "trial": {
+    "id": "gru_2s",
+    "architecture": "gru",
+    "window": 400,
+    "sample_step": 4,
+    "loss": "mse",
+    "augmentation": "noise",
+    "seed": 42
+  },
+  "best_epoch": 3,
+  "best_weights": "ema",
+  "validation_macro_rmse": 0.43153759837150574,
+  "epochs_run": 15,
+  "seconds": 54.263132333057,
+  "device": "mps",
+  "parameter_count": 53444,
+  "weight_change_l2": 6.299142837524414,
+  "initial_weight_l2": 16.19646644592285,
+  "relative_weight_change": 0.38892080927380934,
+  "all_weights_finite": true
+}

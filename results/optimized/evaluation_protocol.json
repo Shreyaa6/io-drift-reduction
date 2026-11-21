@@ -1,0 +1,8 @@
+{
+  "status": "Previously inspected in first run. Subsequent comparisons are development-set reuse, not fresh confirmation.",
+  "initialization": "Reference p/v/q once per segment; no ongoing reference attitude/bias",
+  "calibration": "Fixed gyro/accel biases learned on training references only; also report uncorrected orientation",
+  "common_window": 800,
+  "stride": 20,
+  "selection_checkpoint_sha256": "af72d396a0b4c7f3fea2a68f7639f7c30aefb847bac41a2abc845cf74eacbaa4"
+}

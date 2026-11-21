@@ -1,0 +1,22 @@
+{
+  "trial": {
+    "id": "tcn_4s",
+    "architecture": "tcn",
+    "window": 800,
+    "sample_step": 8,
+    "loss": "mse",
+    "augmentation": "noise",
+    "seed": 42
+  },
+  "best_epoch": 3,
+  "best_weights": "raw",
+  "validation_macro_rmse": 0.4347519874572754,
+  "epochs_run": 15,
+  "seconds": 18.220861415960826,
+  "device": "mps",
+  "parameter_count": 78787,
+  "weight_change_l2": 4.156757354736328,
+  "initial_weight_l2": 20.57411766052246,
+  "relative_weight_change": 0.20203818328074882,
+  "all_weights_finite": true
+}

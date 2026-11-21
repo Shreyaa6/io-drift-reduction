@@ -1,0 +1,21 @@
+{
+  "trial": {
+    "id": "cnn_1s",
+    "architecture": "cnn",
+    "window": 200,
+    "sample_step": 2,
+    "loss": "mse",
+    "augmentation": "none",
+    "seed": 42
+  },
+  "best_epoch": 20,
+  "best_weights": "raw",
+  "validation_macro_rmse": 0.42580005526542664,
+  "epochs_run": 32,
+  "seconds": 77.10928620805498,
+  "parameter_count": 40899,
+  "weight_change_l2": 6.941592693328857,
+  "initial_weight_l2": 8.727754592895508,
+  "relative_weight_change": 0.7953469153428527,
+  "all_weights_finite": true
+}

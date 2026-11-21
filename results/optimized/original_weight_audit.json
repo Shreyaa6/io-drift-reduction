@@ -1,0 +1,6 @@
+{
+  "original_checkpoint_weight_change_l2": 7.756709882052738,
+  "changed_parameter_elements": 40899,
+  "total_parameter_elements": 40899,
+  "initialization_reproduction": "torch.manual_seed(42), VelocityCNN initialization as in first trainer"
+}

@@ -1,0 +1,82 @@
+{
+  "common_window": 800,
+  "stride": 20,
+  "epochs": 60,
+  "patience": 12,
+  "scheduler_patience": 3,
+  "batch_size": 128,
+  "threads": 4,
+  "weight_decay": 0.001,
+  "learning_rate": 0.001,
+  "seed": 42,
+  "repeat_seeds": [
+    17,
+    123
+  ],
+  "trials": [
+    {
+      "id": "cnn_1s",
+      "architecture": "cnn",
+      "window": 200,
+      "sample_step": 2,
+      "loss": "mse",
+      "augmentation": "none"
+    },
+    {
+      "id": "resnet_1s",
+      "architecture": "resnet",
+      "window": 200,
+      "sample_step": 2,
+      "loss": "mse",
+      "augmentation": "noise"
+    },
+    {
+      "id": "resnet_2s",
+      "architecture": "resnet",
+      "window": 400,
+      "sample_step": 4,
+      "loss": "mse",
+      "augmentation": "noise"
+    },
+    {
+      "id": "resnet_4s",
+      "architecture": "resnet",
+      "window": 800,
+      "sample_step": 8,
+      "loss": "mse",
+      "augmentation": "noise"
+    },
+    {
+      "id": "tcn_4s",
+      "architecture": "tcn",
+      "window": 800,
+      "sample_step": 8,
+      "loss": "mse",
+      "augmentation": "noise"
+    },
+    {
+      "id": "gru_2s",
+      "architecture": "gru",
+      "window": 400,
+      "sample_step": 4,
+      "loss": "mse",
+      "augmentation": "noise"
+    },
+    {
+      "id": "resnet_2s_huber",
+      "architecture": "resnet",
+      "window": 400,
+      "sample_step": 4,
+      "loss": "huber",
+      "augmentation": "noise"
+    },
+    {
+      "id": "resnet_4s_rotation",
+      "architecture": "resnet",
+      "window": 800,
+      "sample_step": 8,
+      "loss": "huber",
+      "augmentation": "rotation_noise"
+    }
+  ]
+}

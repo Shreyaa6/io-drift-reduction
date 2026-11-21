@@ -1,0 +1,22 @@
+{
+  "trial": {
+    "id": "resnet_4s_rotation",
+    "architecture": "resnet",
+    "window": 800,
+    "sample_step": 8,
+    "loss": "huber",
+    "augmentation": "rotation_noise",
+    "seed": 42
+  },
+  "best_epoch": 17,
+  "best_weights": "ema",
+  "validation_macro_rmse": 0.4768533557653427,
+  "epochs_run": 29,
+  "seconds": 35.329726208001375,
+  "device": "mps",
+  "parameter_count": 78787,
+  "weight_change_l2": 10.029520034790039,
+  "initial_weight_l2": 20.57411766052246,
+  "relative_weight_change": 0.4874823892951018,
+  "all_weights_finite": true
+}

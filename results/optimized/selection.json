@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-11-22T11:37:12.380127+00:00",
+  "selected": "seed_ensemble_shrink_1.0",
+  "winner_trial": {
+    "id": "resnet_1s",
+    "architecture": "resnet",
+    "window": 200,
+    "sample_step": 2,
+    "loss": "mse",
+    "augmentation": "noise",
+    "seed": 42
+  },
+  "selection_metric": "equal-sequence mean axis body-velocity RMSE on common validation endpoints",
+  "validation_candidates": {
+    "Original CNN": 0.42403920985126586,
+    "seed_42_shrink_0.5": 0.43512243032455444,
+    "seed_42_shrink_0.75": 0.4005177617073059,
+    "seed_42_shrink_1.0": 0.39362746477127075,
+    "seed_17_shrink_0.5": 0.4160323739051819,
+    "seed_17_shrink_0.75": 0.3827938884496689,
+    "seed_17_shrink_1.0": 0.3894222378730774,
+    "seed_123_shrink_0.5": 0.4184435307979584,
+    "seed_123_shrink_0.75": 0.38961753249168396,
+    "seed_123_shrink_1.0": 0.40184587240219116,
+    "seed_ensemble_shrink_0.5": 0.41914938390254974,
+    "seed_ensemble_shrink_0.75": 0.3809017688035965,
+    "seed_ensemble_shrink_1.0": 0.3769119679927826
+  },
+  "baseline_validation_rmse": 0.42403920985126586,
+  "selected_validation_rmse": 0.3769119679927826,
+  "common_window": 800,
+  "stride": 20,
+  "train": [
+    "MH_01_easy",
+    "MH_02_easy",
+    "MH_03_medium",
+    "V1_02_medium",
+    "V2_01_easy",
+    "V2_02_medium"
+  ],
+  "validation": [
+    "MH_04_difficult",
+    "V1_03_difficult"
+  ],
+  "test": [
+    "MH_05_difficult",
+    "V2_03_difficult"
+  ],
+  "test_status": "Previously inspected in first run. Subsequent comparisons are development-set reuse, not fresh confirmation.",
+  "dataset_sha256": "de09fdd03e9147461fd678aa6763454bdf8d1f07172753a9ec80073e9be38e4a",
+  "checkpoint_sha256": "af72d396a0b4c7f3fea2a68f7639f7c30aefb847bac41a2abc845cf74eacbaa4"
+}
