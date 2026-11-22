@@ -1,0 +1,50 @@
+{
+  "config": {
+    "scale": 0.5,
+    "body_offset": false,
+    "smoothing_s": 0.0,
+    "gravity_gain": 0.1
+  },
+  "motion_preserving_config": {
+    "scale": 1.0,
+    "body_offset": false,
+    "smoothing_s": 0.0,
+    "gravity_gain": 0.1
+  },
+  "search_plan": {
+    "scales": [
+      0.5,
+      0.75,
+      1.0
+    ],
+    "body_offset": [
+      false,
+      true
+    ],
+    "smoothing_s": [
+      0.0,
+      0.3,
+      1.0
+    ],
+    "gravity_gain": [
+      0.0,
+      0.1,
+      0.5
+    ],
+    "primary_metric": "validation macro position RMSE",
+    "require_velocity_better_than_zero": true,
+    "note": "54 nonzero-motion candidates; no reference position/velocity/attitude updates after initialization; no stationary gating or forced return to origin"
+  },
+  "validation_position_rmse": 3.8931854105756782,
+  "validation_prior_position_rmse": 5.889131279100179,
+  "validation_zero_position_rmse": 5.108282350170769,
+  "checkpoint_sha256": "af72d396a0b4c7f3fea2a68f7639f7c30aefb847bac41a2abc845cf74eacbaa4",
+  "training_offset": [
+    -0.001320899434587691,
+    0.008628448297812164,
+    -0.007777538067254823
+  ],
+  "test_status": "Previously inspected development sequences; no fresh independent confirmation.",
+  "initialization": "Reference position and orientation once per continuous segment; no ongoing reference inputs",
+  "notes": "Postprocessing/attitude integration search; no new DL weights trained in this experiment"
+}

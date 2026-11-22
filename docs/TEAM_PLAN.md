@@ -25,3 +25,7 @@ No assigned item is automatically complete simply because starter code exists. F
 ## Optimization implementation update
 
 Codex implemented a bounded eight-configuration DL search plus two seed repetitions and training-derived fixed calibration. This does not change authorship assignments: Shreya should review/reproduce model selection, Pranjal should audit calibration and reference-initialization assumptions, Meghna should organize fresh external flight data, and Ritesh should independently verify matched-endpoint comparisons and position-baseline failures. None of these reviews is claimed complete on their behalf.
+
+## Position-drift follow-up review
+
+Pranjal should review the causal tilt correction and initialization assumptions; Shreya should reproduce the unsuccessful displacement-loss residual trials; Meghna should prepare genuinely fresh, varied flight trajectories; Ritesh should report global position, local translation error, velocity error and estimated-versus-reference path length together. The 35.4% global RMSE reduction from damping is not a general navigation claim. These are assigned reviews, not work attributed to teammates retroactively.

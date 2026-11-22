@@ -21,6 +21,14 @@ Position tracking also improves over the original CNN, but does not consistently
 
 See the [complete optimization report](results/optimized/REPORT.md), [all trial scores](results/optimized/leaderboard.csv), and [method/reproduction details](docs/OPTIMIZATION.md). The original baseline experiment is preserved in `results/first_run/`.
 
+## Position-RMSE follow-up: improvement with a tradeoff
+
+A validation-selected filter lowers position RMSE from **5.1788 m to 3.3450 m**, compared with **5.1762 m** for zero velocity, on the reused development sequences. That is **35.4% lower global position RMSE**, but it is achieved mainly by **halving predicted velocities**. Estimated path length is only about 38% of reference, and world-velocity error increases. This is not an unqualified navigation improvement or a general drift-reduction claim.
+
+A scale-one orientation variant did not beat the prior pipeline. Three additional trajectory-loss DL trials also failed to improve validation position error; their unchanged fallback was retained. The original optimized ensemble and default inference remain unchanged.
+
+Read the [position-filter report](results/position_checked/REPORT.md), [trajectory-loss findings](results/trajectory_training/REPORT.md), and [methodology](docs/POSITION_DRIFT.md). **20 tests passed** after these additions.
+
 ## What is implemented
 
 - Pinned, checksum-verified download of the ~19 MB EuRoC IMU/reference subset packaged by AirIO; no large image download.

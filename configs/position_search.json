@@ -1,0 +1,9 @@
+{
+  "scales": [0.5, 0.75, 1.0],
+  "body_offset": [false, true],
+  "smoothing_s": [0.0, 0.3, 1.0],
+  "gravity_gain": [0.0, 0.1, 0.5],
+  "primary_metric": "validation macro position RMSE",
+  "require_velocity_better_than_zero": true,
+  "note": "54 nonzero-motion candidates; no reference position/velocity/attitude updates after initialization; no stationary gating or forced return to origin"
+}

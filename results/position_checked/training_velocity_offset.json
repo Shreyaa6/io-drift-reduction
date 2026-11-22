@@ -1,0 +1,58 @@
+{
+  "offset": [
+    -0.001320899434587691,
+    0.008628448297812164,
+    -0.007777538067254823
+  ],
+  "training_audit": [
+    {
+      "sequence": "MH_01_easy",
+      "mean_body_velocity_error": [
+        0.00958755333301242,
+        0.018022366910955014,
+        0.0076493059953676185
+      ]
+    },
+    {
+      "sequence": "MH_02_easy",
+      "mean_body_velocity_error": [
+        0.007186377664054107,
+        -0.013892298373253495,
+        0.019381271996717936
+      ]
+    },
+    {
+      "sequence": "MH_03_medium",
+      "mean_body_velocity_error": [
+        -0.0029312355867604652,
+        0.021892950978088493,
+        -0.0015282000890499106
+      ]
+    },
+    {
+      "sequence": "V1_02_medium",
+      "mean_body_velocity_error": [
+        -0.018356531871757193,
+        0.01048567324873829,
+        -0.005138248436946116
+      ]
+    },
+    {
+      "sequence": "V2_01_easy",
+      "mean_body_velocity_error": [
+        -0.005685101143644819,
+        -0.0005648436748247978,
+        -0.02366320238345066
+      ]
+    },
+    {
+      "sequence": "V2_02_medium",
+      "mean_body_velocity_error": [
+        0.0022735409975698033,
+        0.015826840697169477,
+        -0.043366155486167804
+      ]
+    }
+  ],
+  "method": "Equal-sequence mean prediction-minus-reference body velocity on training only"
+}

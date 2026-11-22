@@ -1,0 +1,22 @@
+{
+  "loss_weights": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "epochs_max": 30,
+  "patience": 7,
+  "chunk_endpoints": 51,
+  "chunk_duration_s": 5.0,
+  "chunks_per_epoch": 512,
+  "batch_chunks": 8,
+  "learning_rate": 0.0003,
+  "seed": 42,
+  "body_velocity_loss": true,
+  "multi_horizon_displacement_loss": true,
+  "constraint": "validation world velocity RMSE no worse than prior by more than 2%",
+  "selection": "validation macro position RMSE; unchanged ensemble is fallback",
+  "no_velocity_damping": true,
+  "no_future_inputs": true,
+  "no_test_selection": true
+}

@@ -12,3 +12,6 @@ results/*
 
 # Retain the reproducible bounded optimization experiment
 !results/optimized/
+
+!results/position_checked/
+!results/trajectory_training/

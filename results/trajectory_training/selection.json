@@ -1,0 +1,11 @@
+{
+  "selected": "Unchanged baseline",
+  "validation_prior_position_rmse": 5.889129400253296,
+  "validation_best_position_rmse": 5.889129400253296,
+  "validation_prior_world_velocity_rmse": 0.3702695641155934,
+  "constraint": "validation world-velocity RMSE <= 1.02 times prior",
+  "base_checkpoint_sha256": "af72d396a0b4c7f3fea2a68f7639f7c30aefb847bac41a2abc845cf74eacbaa4",
+  "residual_sha256": "5fd1f301614aceee95fe1698b534e6b71ad218848324a352cba92a22b5da6a6c",
+  "initialization": "Reference p/q once per segment; calibrated gyro orientation; no velocity damping",
+  "test_status": "Reused development sequences; no independent final confirmation"
+}
